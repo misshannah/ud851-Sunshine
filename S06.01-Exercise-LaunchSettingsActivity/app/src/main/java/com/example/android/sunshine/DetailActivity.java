@@ -54,6 +54,17 @@ public class DetailActivity extends AppCompatActivity {
         menuItem.setIntent(createShareForecastIntent());
         return true;
     }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
 
-    // TODO (7) Launch SettingsActivity when the Settings option is clicked
+        if (id == R.id.action_settings) {
+            Intent startSettingsActivity = new Intent(this, SettingsActivity.class);
+            startActivity(startSettingsActivity);
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    // DONE (7) Launch SettingsActivity when the Settings option is clicked
 }
